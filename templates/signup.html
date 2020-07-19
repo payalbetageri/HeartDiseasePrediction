@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>REGISTERATION PAGE</title>
+        <style>
+            body{
+    background: url({% static 'images/heart4.jpg' %})20%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    color: white;
+    
+}
+h1{
+    text-align: center;
+    padding: 10px;
+    border-bottom: 5px solid #FFC107;
+}
+h2{
+    padding: 10px;
+}
+.reg{
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border: 3px solid white;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #9031687d
+}
+#name{
+    width: 60%;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    outline: 0px;
+}
+.code{
+    padding: 5px;
+    outline: 0px;
+    border-radius: 3px;
+    border: none;
+}
+
+#sub:hover {
+  opacity: 0.8;
+  box-shadow: 0 15px 30px rgba(0,0,0,1.0);
+}
+
+#num{
+    width: 48%;
+    padding: 5px;
+    outline: 0px;
+    border-radius: 3px;
+    border: none;
+}
+#sub{
+    background-color: #FFC107;
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: 0px;
+    color: white;
+    border-radius: 3px;
+}
+        </style>
+    </head>
+	</script>
+    <body>
+        
+        <form name="f " action="ssignup" method="post">
+            {% csrf_token %}
+            <h1>Register Here</h1>
+            <div class="reg">
+                <form id="reg" >
+                    <h2>Register here</h2>
+                    Enter a Username:<br><input type="text" name="fname" id="name" placeholder="Enter your first name"required></input><br><br>
+                    Enter your Mail:<br/><input type="email" name="email" id="name" placeholder="Enter your mail here"required></input><br><br>
+                    Enter your Password:<br/><input type="password" name="passwd" id="name" placeholder="Enter your password"required></input><br><br>
+                    Re-Enter your Password:<br/><input type="password" onblur="checkpass()" name="cpasswd" id="name" placeholder="Re-Enter your password"required></input><br><br>
+                    Are you a Doctor ?<input type="checkbox" name="doc">yes <br><br>
+                    <select class="code" name="phno">
+                        <option value="code">+91</option>
+                        <option value="code">+92</option>
+                        <option value="code">+93</option>
+                        <option value="code">+94</option>
+                        <option value="code">+95</option>
+                    </select>
+                    <input type="number" id="num" placeholder="0123457"required><br><br>
+                    <input type="submit" value="register" id="sub" >
+                </form>
+            </div>
+			
+        </form>
+        <!--alert({{messages}})-->
+
+{% endblock %}

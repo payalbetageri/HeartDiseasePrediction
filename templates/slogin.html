@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Helvetica; 
+  background: url({% static 'images/heart4.jpg' %})20%;
+  background-size:cover;
+  
+}
+form {
+  border: 2px solid white; 
+  background-color: cyan; 
+  width: 40%; 
+  margin: auto;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+h1{
+  text-align: center;
+  color: white;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+  box-shadow: 0 10px 25px rgba(0,0,0,1.0);
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+}
+</style>
+</head>
+<body>
+  
+
+<h1>Prediction Form Of {{patient}}</h1>
+
+<form action="predict" method="post">
+{% csrf_token %}
+<div class="p">
+
+  <div class="container">
+    <label><b>Age</b></label>
+    <input type="text" placeholder="Age" name="age" required>
+
+    <label for="psw"><b>Gender (Please type 0-Female and 1-Male)</b></label>
+    <input type="text" placeholder="Gender" name="gender" required>
+    
+    <label for="psw"><b>Chestpain</b></label>
+    <input type="text" placeholder="Chestpain" name="cp" required>
+    
+    <label for="psw"><b>Trestbps (resting blood pressure (in mm Hg) )</b></label>
+    <input type="text" placeholder="Trestbps" name="tbps" required>
+    
+    <label for="psw"><b>Chol</b></label>
+    <input type="text" placeholder="Cholestrol" name="chol" required>
+    
+    <label for="psw"><b>Fasting blood sugar</b></label>
+    <input type="text" placeholder="FBS" name="fbs" required>
+    
+    <label for="psw"><b>Resting Electrographic Results</b></label>
+    <input type="text" placeholder="Resting electrographic Results" name="rer" required>
+    
+    <label for="psw"><b>Max. Heart rate achieved (thalach)</b></label>
+    <input type="text" placeholder="Thalach" name="thalach" required>
+    
+    <label for="psw"><b>Excercise induced angia (exang)</b></label>
+    <input type="text" placeholder="Exang" name="exang" required>
+    
+    <label for="psw"><b>ST depression induced by exercise relative to rest(oldpeak)</b></label>
+    <input type="text" placeholder="Oldpeak" name="op" required>
+    
+    <label for="psw"><b>the slope of the peak exercise ST segment (Slope)</b></label>
+    <input type="text" placeholder="Slope" name="slope" required>
+    
+    <label for="psw"><b>number of major vessels (0-3) colored by flourosopy (CA)</b></label>
+    <input type="text" placeholder="CA" name="ca" required>
+    
+    <label for="psw"><b>Thal</b></label>
+    <input type="text" placeholder="Thal" name="thal" required>
+        
+    <button type="submit" id="myDIV">Predict</button>
+  </div>
+
+  <div class="container">
+    <button type="button" class="cancelbtn"><a href="index.html">Cancel</a></button>
+  </div>
+ </div>
+</form>
+
+</body>
+</html>

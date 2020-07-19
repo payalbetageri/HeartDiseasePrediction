@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title> Prediction Results</title>
+<style>
+body {
+  font-family: Helvetica; 
+  background: url({% static 'images/heart4.jpg' %})40%25%;
+  background-size:cover;
+  color: white; 
+}
+
+</style>
+</head>
+<body>
+<h1 align=center>Get Free Consultation<h1>
+<br><br>
+<table align=center bordercolor="white" border="white">
+{% for i in lists %}
+
+<tr>
+    <td colspan="2">
+        <h4>{{i.pname}} </h4>
+    </td>
+    <td>
+        <h4>{{i.pemail}}</h4>
+    </td>
+</tr>
+
+{% endfor %}

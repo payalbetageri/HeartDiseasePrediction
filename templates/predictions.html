@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title> Prediction Results</title>
+<style>
+body {
+  font-family: Helvetica; 
+  background: url({% static 'images/heart4.jpg' %})40%25%;
+  background-size:cover;
+  color: white; 
+}
+
+</style>
+</head>
+<body>
+<h1 align= center><i> Predictions Results</i></h1>
+<div background-color=white><h4 align=center><i><a href="/consult"> Need consultant? </a></i></h4></div><br><br>
+<table align=center bordercolor="white" border="white">
+
+<tr>
+    <td colspan="2">
+        <h3>Age :&nbsp;&nbsp;&nbsp; </h3>
+    </td>
+    <td>
+        <h3>{{age}}</h3>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        <h3>Gender :&nbsp;&nbsp;&nbsp; </h3>
+    </td>
+    <td>
+        <h3>{{gender}}</h3>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        <h3>Chest Pain :&nbsp;&nbsp;&nbsp; </h3>
+    </td>
+    <td>
+        <h3>{{cp}}</h3>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        <h3>Cholestrol :&nbsp;&nbsp;&nbsp; </h3>
+    </td>
+    <td>
+        <h3>{{chol}}</h3>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        <h3>Fasting blood sugar :&nbsp;&nbsp;&nbsp; </h3>
+    </td>
+    <td>
+        <h3>{{fbs}}</h3>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        <h3>Thalach :&nbsp;&nbsp;&nbsp; </h3>
+    </td>
+    <td>
+        <h3>{{thalach}}</h3>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        <h3>Your prediction is:&nbsp;&nbsp;&nbsp; </h3>
+    </td>
+    <td>
+        <h3>{{predicted}}</h3>
+    </td>
+</tr>
+
+
+</body>
+
+</html>

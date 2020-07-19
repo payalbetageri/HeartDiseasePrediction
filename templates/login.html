@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Helvetica; 
+  background: url({% static 'images/heart4.jpg' %})20%;
+  background-size:cover;
+  
+}
+form {
+  border: 2px solid white; 
+  background-color: #afeeeeb0; 
+  width: 30%; 
+  margin: auto;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+h1{
+  text-align: center;
+  color: white;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+  box-shadow: 0 10px 25px rgba(0,0,0,1.0);
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 50%;
+  border-radius: 10%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+}
+</style>
+</head>
+<body>
+  
+
+<h1>Login Here</h1>
+
+<form action="slogin" method="post">
+{% csrf_token %}
+<div class="p">
+  <div class="imgcontainer">
+    <img src="{% static 'images/login_img.jpg' %}" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="username" name="username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="password" name="passwd" required>
+        
+    <button type="submit" id="myDIV">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container">
+    <button type="button" class="cancelbtn"><a href="index.html">Cancel</a></button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+ </div>
+</form>
+
+</body>
+</html>
